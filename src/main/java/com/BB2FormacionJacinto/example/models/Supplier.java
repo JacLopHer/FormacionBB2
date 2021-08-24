@@ -1,13 +1,15 @@
-package com.BB2FormacionJacinto.example.model;
+package com.BB2FormacionJacinto.example.models;
 
 
+
+import com.BB2FormacionJacinto.commons.models.AuditModel;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "supplier")
-public class Supplier {
+public class Supplier extends AuditModel {
     @Id
     @Column(name = "id_supplier")
     @GeneratedValue (strategy = GenerationType.IDENTITY)

@@ -1,7 +1,7 @@
 package com.BB2FormacionJacinto.example.dto;
 
-import com.BB2FormacionJacinto.example.model.PriceReduction;
-import com.BB2FormacionJacinto.example.model.Supplier;
+import com.BB2FormacionJacinto.example.models.PriceReduction;
+import com.BB2FormacionJacinto.example.models.Supplier;
 import com.BB2FormacionJacinto.example.enums.StateEnum;
 import lombok.Data;
 
@@ -15,8 +15,8 @@ public class ItemDTO {
     private String description;
     private Double price;
     private StateEnum state;
-    private List<Supplier> suppliers;
-    private List<PriceReduction> priceReductions;
+    private List<SupplierDTO> suppliers;
+    private List<PriceReductionDTO> priceReductions;
     private LocalDate creation;
     private String creator;
 }

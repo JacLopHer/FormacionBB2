@@ -1,6 +1,7 @@
-package com.BB2FormacionJacinto.example.model;
+package com.BB2FormacionJacinto.example.models;
 
 
+import com.BB2FormacionJacinto.commons.models.AuditModel;
 import com.BB2FormacionJacinto.example.enums.StateEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
@@ -9,22 +10,17 @@ import java.util.List;
 
 @Entity
 @Table(name="item")
-public class Item {
+public class Item extends AuditModel {
     @Id
     @Column (name= "id_item")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_item;
 
-    @Column (name= "item_code", unique = true)
+    @Column(name = "item_code", unique = true)
     private Long code_product;
 
-    @Column (name = "description")
     private String description;
-
-    @Column (name = "price")
     private Double price;
-
-    @Column (name = "state")
     private StateEnum state;
 
     @ManyToMany

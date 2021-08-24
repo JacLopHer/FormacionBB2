@@ -1,5 +1,6 @@
-package com.BB2FormacionJacinto.example.model;
+package com.BB2FormacionJacinto.example.models;
 
+import com.BB2FormacionJacinto.commons.models.AuditModel;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 
@@ -9,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table (name = "price_reduction")
-public class PriceReduction {
+public class PriceReduction extends AuditModel {
 
     @Id
     @Column(name = "id_price_reduction")

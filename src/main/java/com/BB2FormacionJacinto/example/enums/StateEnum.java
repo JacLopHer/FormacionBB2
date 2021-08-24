@@ -1,8 +1,8 @@
 package com.BB2FormacionJacinto.example.enums;
 
 public enum StateEnum {
-    ACTIVE(1,"Active"),
-    DISCONTINUED(0,"Discontinued");
+    DISCONTINUED(1,"Discontinued"),
+    ACTIVE(2,"Active"),;
 
     private final Integer id;
     private String description;
