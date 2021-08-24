@@ -13,12 +13,12 @@ INSERT INTO item (ITEM_CODE, DESCRIPTION, PRICE, STATE, CREATOR, CREATION ) VALU
 INSERT INTO item (ITEM_CODE, DESCRIPTION, PRICE, STATE, CREATOR, CREATION ) VALUES (060201, 'RASKOG Utility Cart', 29.99 , 1, 'Juan',  CURRENT_DATE());
 INSERT INTO item (ITEM_CODE, DESCRIPTION, PRICE, STATE, CREATOR, CREATION ) VALUES (070101, 'PLASTIS Dishwashing Brush', 25.99, 0, 'Juan',   CURRENT_DATE());
 
-INSERT INTO supplier (COUNTRY , NAME ) VALUES ('China', 'Hong Kong Woods');
-INSERT INTO supplier (COUNTRY , NAME ) VALUES ('China', 'Plastic Enterprise');
-INSERT INTO supplier (COUNTRY , NAME ) VALUES ('USA', 'Aluminum Tools');
-INSERT INTO supplier (COUNTRY , NAME ) VALUES ('Sweeden', 'Furniture Designers');
-INSERT INTO supplier (COUNTRY , NAME ) VALUES ('Finland', 'Desktop Finland');
-INSERT INTO supplier (COUNTRY , NAME ) VALUES ('Spain', 'Muebles Benito');
+INSERT INTO supplier (COUNTRY, NAME ) VALUES ('China', 'Hong Kong Woods');
+INSERT INTO supplier (COUNTRY, NAME ) VALUES ('China', 'Plastic Enterprise');
+INSERT INTO supplier (COUNTRY, NAME ) VALUES ('USA', 'Aluminum Tools');
+INSERT INTO supplier (COUNTRY, NAME ) VALUES ('Sweden', 'Furniture Designers');
+INSERT INTO supplier (COUNTRY, NAME ) VALUES ('Finland', 'Desktop Finland');
+INSERT INTO supplier (COUNTRY, NAME ) VALUES ('Spain', 'Muebles Benito');
 
 INSERT INTO item_supplier ( ITEM_ID ,SUPPLIER_ID ) VALUES ( 1 ,1 );
 INSERT INTO item_supplier ( ITEM_ID ,SUPPLIER_ID ) VALUES ( 1 ,3 );

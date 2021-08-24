@@ -1,6 +1,6 @@
-package com.BB2FormacionJacinto.dto;
+package com.BB2FormacionJacinto.example.dto;
 
-import com.BB2FormacionJacinto.entities.Item;
+import com.BB2FormacionJacinto.example.model.Item;
 import lombok.Data;
 import java.util.Date;
 

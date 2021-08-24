@@ -1,4 +1,4 @@
-package com.BB2FormacionJacinto.dto;
+package com.BB2FormacionJacinto.example.dto;
 
 import lombok.Data;
 

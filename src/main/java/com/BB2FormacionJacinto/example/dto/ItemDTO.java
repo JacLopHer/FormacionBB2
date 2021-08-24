@@ -1,8 +1,8 @@
-package com.BB2FormacionJacinto.dto;
+package com.BB2FormacionJacinto.example.dto;
 
-import com.BB2FormacionJacinto.entities.PriceReduction;
-import com.BB2FormacionJacinto.entities.Supplier;
-import com.BB2FormacionJacinto.globalservices.StateEnum;
+import com.BB2FormacionJacinto.example.model.PriceReduction;
+import com.BB2FormacionJacinto.example.model.Supplier;
+import com.BB2FormacionJacinto.example.enums.StateEnum;
 import lombok.Data;
 
 import java.time.LocalDate;

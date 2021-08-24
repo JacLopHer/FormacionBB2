@@ -1,9 +1,8 @@
-package com.BB2FormacionJacinto.entities;
+package com.BB2FormacionJacinto.example.model;
 
 
-import com.BB2FormacionJacinto.globalservices.StateEnum;
+import com.BB2FormacionJacinto.example.enums.StateEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;

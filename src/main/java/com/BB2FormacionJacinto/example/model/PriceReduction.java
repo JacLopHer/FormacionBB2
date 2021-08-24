@@ -1,4 +1,4 @@
-package com.BB2FormacionJacinto.entities;
+package com.BB2FormacionJacinto.example.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
