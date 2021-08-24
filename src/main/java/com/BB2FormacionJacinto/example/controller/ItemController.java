@@ -2,7 +2,6 @@ package com.BB2FormacionJacinto.example.controller;
 
 import com.BB2FormacionJacinto.example.dto.ItemDTO;
 import com.BB2FormacionJacinto.example.service.implementations.ItemServiceImpl;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/store")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class ItemController {
 
     @Autowired

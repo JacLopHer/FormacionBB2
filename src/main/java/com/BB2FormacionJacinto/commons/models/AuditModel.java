@@ -1,6 +1,5 @@
 package com.BB2FormacionJacinto.commons.models;
 
-import java.sql.Timestamp;
 
 
 import javax.persistence.*;
