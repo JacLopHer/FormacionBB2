@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface UserService {
     public UserDTO newUser(UserDTO userDTO);
-    public UserDTO deleteUser(UserDTO userDTO);
+    public UserDTO deleteUserById(Long id);
     public List<UserDTO> listUsers();
 }
