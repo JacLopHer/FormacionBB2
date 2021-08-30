@@ -1,17 +1,14 @@
 package com.BB2FormacionJacinto.example.controller;
 
 
-import com.BB2FormacionJacinto.example.dto.ItemDTO;
 import com.BB2FormacionJacinto.example.dto.UserDTO;
-import com.BB2FormacionJacinto.example.models.User;
-import com.BB2FormacionJacinto.example.service.implementations.ItemServiceImpl;
 import com.BB2FormacionJacinto.example.service.implementations.UserServiceImpl;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -43,6 +40,16 @@ public class UserController {
             UserDTO result = userService.deleteUserById(id);
             return new ResponseEntity<UserDTO>(result, HttpStatus.OK);
         } catch (Exception e) {
+            return new ResponseEntity<UserDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDTO> findUserById(@PathVariable Long id){
+        try{
+            UserDTO result = userService.findUserById(id);
+            return new ResponseEntity<UserDTO>(result, HttpStatus.OK);
+        }catch (Exception e) {
             return new ResponseEntity<UserDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

@@ -49,4 +49,12 @@ public class UserServiceImpl implements UserService {
 
         return (users.isEmpty()) ? null : usersDTO;
     }
+
+    @Override
+    public UserDTO findUserById(Long id) {
+        User user = userRepository.getById(id);
+        return mapper.map(user,UserDTO.class);
+    }
+
+
 }

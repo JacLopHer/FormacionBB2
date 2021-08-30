@@ -8,4 +8,5 @@ public interface UserService {
     public UserDTO newUser(UserDTO userDTO);
     public UserDTO deleteUserById(Long id);
     public List<UserDTO> listUsers();
+    public UserDTO findUserById(Long id);
 }
