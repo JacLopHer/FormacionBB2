@@ -1,6 +1,7 @@
 package com.BB2FormacionJacinto.example.controller;
 
 import com.BB2FormacionJacinto.example.dto.ItemDTO;
+import com.BB2FormacionJacinto.example.models.AppUser;
 import com.BB2FormacionJacinto.example.service.implementations.ItemServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,20 +41,31 @@ public class ItemController {
         }
     }
 
-    @PostMapping("/item/crud/update")
-    public ResponseEntity<ItemDTO> updateItem(@RequestBody ItemDTO itemDTO) {
+    @PutMapping("/item/crud/update/{id}")
+    public ResponseEntity<ItemDTO> updateItem(@PathVariable Long id, @RequestBody ItemDTO itemDTO) {
         try {
-            ItemDTO result = itemService.updateItem(itemDTO);
+            ItemDTO result = itemService.findItemById(id);
+            result.setCode_product(itemDTO.getCode_product());
+            result.setCreation(itemDTO.getCreation());
+            result.setDescription(itemDTO.getDescription());
+            result.setState(itemDTO.getState());
+            result.setCreator(itemDTO.getCreator());
+            result.setSuppliers(itemDTO.getSuppliers());
+            result.setPriceReductions(itemDTO.getPriceReductions());
+
+            result = itemService.updateItem(itemDTO);
+
             return new ResponseEntity<ItemDTO>(result, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<ItemDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @PostMapping("/item/crud/discontinue")
-    public ResponseEntity<ItemDTO> discontinueItem(@RequestBody ItemDTO itemDTO) {
+    @PostMapping("/item/crud/discontinue/{id}")
+    public ResponseEntity<ItemDTO> discontinueItem(@PathVariable Long id) {
         try {
-            ItemDTO result = itemService.deactivateItem(itemDTO);
+            ItemDTO item = itemService.findItemById(id);
+            ItemDTO result = itemService.deactivateItem(item);
             return new ResponseEntity<ItemDTO>(result, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<ItemDTO>(HttpStatus.INTERNAL_SERVER_ERROR);

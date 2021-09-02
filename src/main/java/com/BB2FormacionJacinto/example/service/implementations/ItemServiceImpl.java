@@ -51,7 +51,8 @@ public class ItemServiceImpl implements ItemService {
     public ItemDTO createItem(ItemDTO newItem) {
         Item itemToPersist = mapper.map(newItem, Item.class);
         itemToPersist.setCreatedDate(new Date());
-        itemRepository.save(itemToPersist);
+        itemToPersist.setState(StateEnum.getFromDescription("Active"));
+        itemRepository.saveAndFlush(itemToPersist);
         priceReductionRepository.saveAll(itemToPersist.getPriceReductions());
         return mapper.map(itemToPersist, ItemDTO.class);
     }

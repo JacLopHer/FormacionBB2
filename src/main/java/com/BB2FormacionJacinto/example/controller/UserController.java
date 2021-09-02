@@ -53,4 +53,13 @@ public class UserController {
             return new ResponseEntity<UserDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    @GetMapping("/name/{username}")
+    public ResponseEntity<UserDTO> findUserByUsername(@PathVariable String username){
+        try{
+            UserDTO result = userService.loginUser(username);
+            return new ResponseEntity<UserDTO>(result, HttpStatus.OK);
+        }catch (Exception e) {
+            return new ResponseEntity<UserDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

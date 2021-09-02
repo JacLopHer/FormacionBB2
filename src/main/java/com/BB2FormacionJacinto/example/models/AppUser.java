@@ -4,10 +4,11 @@ package com.BB2FormacionJacinto.example.models;
 import com.BB2FormacionJacinto.commons.models.AuditModel;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="users")
-public class User extends AuditModel {
+public class AppUser extends AuditModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +26,7 @@ public class User extends AuditModel {
 
     @Column(name = "enabled")
     private boolean enabled;
+
 
     public Long getId_user() {
         return id_user;

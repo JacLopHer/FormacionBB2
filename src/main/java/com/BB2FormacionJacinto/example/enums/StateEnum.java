@@ -1,5 +1,8 @@
 package com.BB2FormacionJacinto.example.enums;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum StateEnum {
     DISCONTINUED(1,"Discontinued"),
     ACTIVE(2,"Active"),;
@@ -15,6 +18,15 @@ public enum StateEnum {
     public static StateEnum getFromId(Integer id){
         for(StateEnum e : values()){
             if(e.id.equals(id)){
+                return e;
+            }
+        }
+        return null;
+    }
+
+    public static StateEnum getFromDescription(String definition ){
+        for(StateEnum e : values()){
+            if(e.description.equals(definition)){
                 return e;
             }
         }

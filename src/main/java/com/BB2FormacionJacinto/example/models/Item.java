@@ -38,7 +38,7 @@ public class Item extends AuditModel {
     private List<PriceReduction> priceReductions;
 
     @Column (name = "creation")
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate creation;
 
     @Column(name="creator")
