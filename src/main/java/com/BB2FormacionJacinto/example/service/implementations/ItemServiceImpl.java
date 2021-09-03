@@ -7,6 +7,7 @@ import com.BB2FormacionJacinto.example.models.Item;
 import com.BB2FormacionJacinto.example.models.PriceReduction;
 import com.BB2FormacionJacinto.example.repositories.ItemRepository;
 import com.BB2FormacionJacinto.example.repositories.PriceReductionRepository;
+import com.BB2FormacionJacinto.example.repositories.SupplierRepository;
 import com.BB2FormacionJacinto.example.service.ItemService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,8 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private PriceReductionRepository priceReductionRepository;
 
+    @Autowired
+    private SupplierRepository supplierRepository;
 
     @Autowired
     private ModelMapper mapper;
@@ -52,6 +55,8 @@ public class ItemServiceImpl implements ItemService {
         Item itemToPersist = mapper.map(newItem, Item.class);
         itemToPersist.setCreatedDate(new Date());
         itemToPersist.setState(StateEnum.getFromDescription("Active"));
+
+        supplierRepository.saveAll(itemToPersist.getSuppliers());
         itemRepository.saveAndFlush(itemToPersist);
         priceReductionRepository.saveAll(itemToPersist.getPriceReductions());
         return mapper.map(itemToPersist, ItemDTO.class);

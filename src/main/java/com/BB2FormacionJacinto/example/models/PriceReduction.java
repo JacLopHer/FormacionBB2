@@ -20,11 +20,11 @@ public class PriceReduction extends AuditModel {
     @Column(name = "reduced_price")
     private Double reduced_price;
 
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "start_date")
     private Date start_date;
 
-    @JsonFormat(pattern = "dd-mm-yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "end_date")
     private Date end_date;
 
