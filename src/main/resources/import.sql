@@ -1,6 +1,6 @@
-INSERT INTO users (created_date,  username, password, enabled, admin ) VALUES (CURRENT_TIMESTAMP(),'Admin', 'passadmin', true, true );
-INSERT INTO users (created_date,  username, password, enabled, admin ) VALUES (CURRENT_TIMESTAMP(),'Comercial', 'passcomercial', true, 0 );
-INSERT INTO users (created_date,  username, password, enabled, admin ) VALUES (CURRENT_TIMESTAMP(),'Cajero', 'passcajero', 1, 0 );
+INSERT INTO users (created_date,  username, password, enabled, admin ) VALUES (CURRENT_TIMESTAMP(),'Admin@bitbox.com', 'passadmin', true, true );
+INSERT INTO users (created_date,  username, password, enabled, admin ) VALUES (CURRENT_TIMESTAMP(),'Comercial@bitbox.com', 'passcomercial', true, 0 );
+INSERT INTO users (created_date,  username, password, enabled, admin ) VALUES (CURRENT_TIMESTAMP(),'Cajero@bitbox.com', 'passcajero', 1, 0 );
 
 INSERT INTO item (created_date,  ITEM_CODE, DESCRIPTION, PRICE, STATE, CREATOR, CREATION ) VALUES (CURRENT_TIMESTAMP(),010101, 'BILLY Bookcase', 59.00, 1, 'Manolo', CURRENT_DATE());
 INSERT INTO item (created_date,  ITEM_CODE, DESCRIPTION, PRICE, STATE, CREATOR, CREATION ) VALUES (CURRENT_TIMESTAMP(),010102, 'RIGGA Clothes Rack', 12.99, 0, 'Juan',  CURRENT_DATE());

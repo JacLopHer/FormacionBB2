@@ -3,7 +3,6 @@ package com.BB2FormacionJacinto.example.controller;
 
 import com.BB2FormacionJacinto.example.dto.UserDTO;
 import com.BB2FormacionJacinto.example.service.implementations.UserServiceImpl;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

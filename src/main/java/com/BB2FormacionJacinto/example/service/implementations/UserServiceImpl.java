@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO newUser(UserDTO userDTO) {
         AppUser appUser = mapper.map(userDTO, AppUser.class);
+        //TODO crypt the password
         userRepository.save(appUser);
 
         return mapper.map(appUser,UserDTO.class);
